@@ -36,14 +36,19 @@ http_archive(
 )
 
 # FP16 library, used for half-precision conversions
-http_archive(
+#http_archive(
+#    name = "FP16",
+#    build_file = "@//third_party:FP16.BUILD",
+#    sha256 = "e66e65515fa09927b348d3d584c68be4215cfe664100d01c9dbc7655a5716d70",
+#    strip_prefix = "FP16-0a92994d729ff76a58f692d3028ca1b64b145d91",
+#    urls = [
+#        "https://github.com/Maratyszcza/FP16/archive/0a92994d729ff76a58f692d3028ca1b64b145d91.zip",
+#    ],
+#)
+new_local_repository(
     name = "FP16",
     build_file = "@//third_party:FP16.BUILD",
-    sha256 = "e66e65515fa09927b348d3d584c68be4215cfe664100d01c9dbc7655a5716d70",
-    strip_prefix = "FP16-0a92994d729ff76a58f692d3028ca1b64b145d91",
-    urls = [
-        "https://github.com/Maratyszcza/FP16/archive/0a92994d729ff76a58f692d3028ca1b64b145d91.zip",
-    ],
+    path = "C:/Users/tcwg/source/repos/FP16",
 )
 
 # FXdiv library, used for repeated integer division by the same factor
@@ -56,22 +61,30 @@ http_archive(
 
 # LINT.IfChange
 # pthreadpool library, used for parallelization
-http_archive(
+#http_archive(
+#    name = "pthreadpool",
+#    sha256 = "a4cf06de57bfdf8d7b537c61f1c3071bce74e57524fe053e0bbd2332feca7f95",
+#    strip_prefix = "pthreadpool-4fe0e1e183925bf8cfa6aae24237e724a96479b8",
+#    urls = ["https://github.com/Maratyszcza/pthreadpool/archive/4fe0e1e183925bf8cfa6aae24237e724a96479b8.zip"],
+#)
+local_repository(
     name = "pthreadpool",
-    sha256 = "a4cf06de57bfdf8d7b537c61f1c3071bce74e57524fe053e0bbd2332feca7f95",
-    strip_prefix = "pthreadpool-4fe0e1e183925bf8cfa6aae24237e724a96479b8",
-    urls = ["https://github.com/Maratyszcza/pthreadpool/archive/4fe0e1e183925bf8cfa6aae24237e724a96479b8.zip"],
+    path = "C:/Users/tcwg/source/repos/pthreadpool",
 )
 # LINT.ThenChange(cmake/DownloadPThreadPool.cmake)
 
 # cpuinfo library, used for detecting processor characteristics
-http_archive(
+#http_archive(
+#    name = "cpuinfo",
+#    sha256 = "a615cac78fad03952cc3e1fd231ce789a8df6e81a5957b64350cb8200364b385",
+#    strip_prefix = "cpuinfo-d6860c477c99f1fce9e28eb206891af3c0e1a1d7",
+#    urls = [
+#        "https://github.com/pytorch/cpuinfo/archive/d6860c477c99f1fce9e28eb206891af3c0e1a1d7.zip"
+#    ],
+#)
+local_repository(
     name = "cpuinfo",
-    sha256 = "a615cac78fad03952cc3e1fd231ce789a8df6e81a5957b64350cb8200364b385",
-    strip_prefix = "cpuinfo-d6860c477c99f1fce9e28eb206891af3c0e1a1d7",
-    urls = [
-        "https://github.com/pytorch/cpuinfo/archive/d6860c477c99f1fce9e28eb206891af3c0e1a1d7.zip"
-    ],
+    path = "C:/Users/tcwg/source/repos/cpuinfo",
 )
 
 # Ruy library, used to benchmark against
@@ -85,7 +98,7 @@ http_archive(
 )
 
 # Android NDK location and version is auto-detected from $ANDROID_NDK_HOME environment variable
-android_ndk_repository(name = "androidndk")
+#android_ndk_repository(name = "androidndk")
 
 # Android SDK location and API is auto-detected from $ANDROID_HOME environment variable
-android_sdk_repository(name = "androidsdk")
+#android_sdk_repository(name = "androidsdk")

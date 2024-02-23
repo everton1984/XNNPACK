@@ -175,6 +175,7 @@ def xnnpack_cc_library(
             "//build_config:windows_x86_64_mingw": mingw_copts + gcc_x86_copts,
             "//build_config:windows_x86_64_msys": msys_copts + gcc_x86_copts,
             "//build_config:windows_x86_64": msvc_x86_64_copts,
+            "//build_config:windows_arm64": [],
             "//build_config:android_armv7": aarch32_copts,
             "//build_config:android_arm64": aarch64_copts,
             "//build_config:android_x86": gcc_x86_copts,
@@ -196,6 +197,7 @@ def xnnpack_cc_library(
             "//build_config:windows_x86_64_mingw": gcc_copts,
             "//build_config:windows_x86_64_msys": gcc_copts,
             "//build_config:windows_x86_64": msvc_copts,
+            "//build_config:windows_arm64": msvc_copts,
             "//conditions:default": gcc_copts,
         }) + select({
             "//:optimized_build": optimized_copts,

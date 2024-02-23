@@ -92,6 +92,11 @@ config_setting(
 )
 
 config_setting(
+    name = "windows_arm64",
+    values = {"cpu": "arm64_windows"},
+)
+
+config_setting(
     name = "windows_x86_64_clang",
     values = {
         "compiler": "clang-cl",
@@ -264,6 +269,7 @@ selects.config_setting_group(
         ":macos_arm64",
         ":tvos_arm64",
         ":watchos_arm64_32",
+        ":windows_arm64",
     ],
 )
 
