@@ -57,8 +57,8 @@
   .macro BEGIN_FUNCTION name
     .text
     .p2align 4
-    .global _\name
-    _\name:
+    .global \name
+    \name:
   .endm
 
   .macro END_FUNCTION name
